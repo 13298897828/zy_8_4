@@ -1,32 +1,167 @@
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+#pragma mark 加和
+void sum(int n)
+{
+    int sum = 0;
+    for (int i = 0; i <= n; i ++) {
+        sum += i;
+    }
 
-# Precompiled Headers
-*.gch
-*.pch
+    printf("%d\n",sum);
+}
+#pragma mark 哪一天
+void dayOfYear(year, month,day)
+{
+    
+    if (year % 400 == 0 ||(year % 4 ==0 && year % 100!= 0)) {
+        int day1[12] = {0,31,60,91,121,152,182,213,244,274,305,335};
+        switch (month) {
+            case 1:
+                printf("第%d天\n",day);
+                break;
+            case 2:
+                printf("第%d天\n",day + day1[1]);
+                break;
+            case 3:
+                printf("第%d天\n",day + day1[2]);
+                break;
+            case 4:
+                printf("第%d天\n",day + day1[3]);
+                break;
+            case 5:
+                printf("第%d天\n",day + day1[4]);
+                break;
+            case 6:
+                printf("第%d天\n",day + day1[5]);
+                break;
+            case 7:
+                printf("第%d天\n",day + day1[6]);
+                break;
+            case 8:
+                printf("第%d天\n",day + day1[7]);
+                break;
+            case 9:
+                printf("第%d天\n",day + day1[8]);
+                break;
+            case 10:
+                printf("第%d天\n",day + day1[9]);
+                break;
+            case 11:
+                printf("第%d天\n",day + day1[10]);
+                break;
+            case 12:
+                printf("第%d天\n",day + day1[11]);
+                break;
+            
+        }
+        
+    }else{
+        int day1[12] = {0,31,59,90,120,151,181,212,243,273,304,334};
+        switch (month) {
+            case 1:
+                printf("第%d天\n",day);
+                break;
+            case 2:
+                printf("第%d天\n",day + day1[1]);
+                break;
+            case 3:
+                printf("第%d天\n",day + day1[2]);
+                break;
+            case 4:
+                printf("第%d天\n",day + day1[3]);
+                break;
+            case 5:
+                printf("第%d天\n",day + day1[4]);
+                break;
+            case 6:
+                printf("第%d天\n",day + day1[5]);
+                break;
+            case 7:
+                printf("第%d天\n",day + day1[6]);
+                break;
+            case 8:
+                printf("第%d天\n",day + day1[7]);
+                break;
+            case 9:
+                printf("第%d天\n",day + day1[8]);
+                break;
+            case 10:
+                printf("第%d天\n",day + day1[9]);
+                break;
+            case 11:
+                printf("第%d天\n",day + day1[10]);
+                break;
+            case 12:
+                printf("第%d天\n",day + day1[11]);
+                break;
+                
+        }
+    }
+    
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+}
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+#pragma mark 中间值
+void mid(int num1,int num2,int num3)
+{
+     int max = num1 > num2 ? num1 :num2;
+     int max1 = max > num3 ? max :num3;
+     int min = num1 > num2 ? num2 : num1;
+     int min1 = min > num3 ? num3 :min;
+     int midnum = num1 + num2 + num3 - max1 -min1;
+    
+//    int  d = cc > dd ? dd: cc;
+    int d ;
+    if (num1 > num2 && num2 > num3) {
+        d = num2;
+    }
+    if (num1 > num3 && num3 > num2) {
+        d = num3;
+    }
+    if (num3 > num1 && num1 > num2) {
+        d = num1;
+    }
+    printf("中间值是: %d %d\n",d,midnum);
+}
+#pragma mark 位数
+void weiShu(int a)
+{
+    int count = 1;
+    while ((a / 10) > 0)
+    {
+        a = a / 10;
+        count ++;
+    }
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+    printf("%d位\n",count);
 
-# Debug files
-*.dSYM/
+}
+
+#pragma mark 阶乘
+int jieCheng(int n)
+{
+    
+    if (n > 1) {
+         n *= jieCheng(n - 1);
+       
+    }
+    
+    return n;
+}
+#pragma mark 累加
+int leiJia(int n)
+{
+    if (n > 0) {
+        n += leiJia(n -1);
+    }
+    return n;
+}
+#pragma mark 交换值
+void changeValue(int num1,int num2)
+{
+    num1 = num1 ^ num2;
+    num2 = num1 ^ num2;
+    num1 = num1 ^ num2;
+    printf("%d %d\n",num1,num2);
+
+
+}
